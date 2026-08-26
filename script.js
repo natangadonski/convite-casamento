@@ -1,9 +1,16 @@
-  const stage = document.getElementById('stage');
-  const seal = document.getElementById('seal');
+const wrap = document.getElementById('scrollWrap');
+const seal = document.getElementById('sealZone');
 
-  seal.addEventListener('click', () => {
-    if (stage.classList.contains('open')) return;
+function openScroll() {
+  if (wrap.classList.contains('open')) return;
+  wrap.classList.add('open');
+  seal.classList.add('cracked');
+}
 
-    seal.classList.add('broken');
-    stage.classList.add('open');
-  });
+seal.addEventListener('click', openScroll);
+seal.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    openScroll();
+  }
+});

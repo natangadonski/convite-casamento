@@ -3,29 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Convite - Pergaminho</title>
+<title>Ariane &amp; Natan - Convite de Casamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Cormorant+SC:wght@500&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="stage" id="stage">
-    <div class="page-fill" id="pageFill">
-      <div class="content">
-        <h1>Ana &amp; João</h1>
-        <p>convidam para celebrar</p>
-        <p>15 de Novembro de 2026</p>
-        <p>Capela São Miguel</p>
+<div class="stage">
+  <p class="eyebrow">Guarde a data</p>
+
+  <div class="scroll-wrap" id="scrollWrap">
+    <div class="rod"></div>
+
+    <div class="paper-clip">
+      <div class="paper">
+        <div class="paper-content">
+          <p class="invite-kicker">Convite de Casamento</p>
+          <h1 class="names">Ariane<span class="amp">&amp;</span>Natan</h1>
+          <svg class="flourish" viewBox="0 0 120 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="0" y1="7" x2="45" y2="7" stroke="#b8935a" stroke-width="1"/>
+            <path d="M60 2 L64 7 L60 12 L56 7 Z" fill="#b8935a"/>
+            <line x1="75" y1="7" x2="120" y2="7" stroke="#b8935a" stroke-width="1"/>
+          </svg>
+          <p class="verse">com o coração transbordando de alegria, convidamos você para celebrar conosco o início da nossa história a dois.</p>
+          <div class="details">
+            <span class="date">25 de novembro de 2026, às 16h</span>
+            <span class="place">O Celeiro - Guarapuava, PR</span>
+          </div>
+          <a class="rsvp" href="#" onclick="return false;">Confirmar presença</a>
+          <p class="rsvp-note">Por gentileza, confirme até 20 de novembro</p>
+        </div>
       </div>
     </div>
 
-    <div class="cylinder" id="cyl-top"></div>
-    <div class="cylinder" id="cyl-bottom"></div>
+    <div class="rod"></div>
 
-    <div class="ribbon" id="ribbon"></div>
-    <div class="seal" id="seal">&#9670;</div>
-
-    <div class="hint">clique no lacre para abrir</div>
+    <div class="seal-zone" id="sealZone" role="button" tabindex="0" aria-label="Abrir convite">
+      <div class="seal-half left">
+        <svg viewBox="0 0 78 78" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <radialGradient id="waxGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#a53a4d"/><stop offset="55%" stop-color="#7a2436"/><stop offset="100%" stop-color="#4f1522"/>
+            </radialGradient>
+          </defs>
+          <path d="M39 4 C55 3 71 15 73 33 C75 51 63 70 45 74 C27 78 8 68 5 49 C2 30 12 6 39 4 Z" fill="url(#waxGrad)"/>
+          <text x="39" y="47" font-family="Cormorant Garamond, serif" font-size="26" font-style="italic" fill="#e6c9a8" text-anchor="middle">A&amp;N</text>
+        </svg>
+      </div>
+      <div class="seal-half right">
+        <svg viewBox="0 0 78 78" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M39 4 C55 3 71 15 73 33 C75 51 63 70 45 74 C27 78 8 68 5 49 C2 30 12 6 39 4 Z" fill="url(#waxGrad)"/>
+          <text x="39" y="47" font-family="Cormorant Garamond, serif" font-size="26" font-style="italic" fill="#e6c9a8" text-anchor="middle">A&amp;N</text>
+        </svg>
+      </div>
+    </div>
   </div>
+
+  <p class="hint">Toque no selo para abrir</p>
+</div>
 
 <script src="script.js"></script>
 
