@@ -195,11 +195,14 @@
     background: radial-gradient(ellipse at 50% 20%, #b9895a 0%, #9c6f42 75%);
     font-family: 'EB Garamond', Georgia, serif;
     color: #4a3423;
+    overflow-x:hidden;
   }
+
+  body{ display:block; }
 
   .stage{
     position:static;
-    width:auto;
+    width:100%;
     height:auto;
     min-height:100vh;
     display:flex;
@@ -217,8 +220,15 @@
 
   .eyebrow{ font-size:.72rem; color:#f0e2c0; opacity:.75; margin:0 0 2.2rem; text-align:center; }
 
-  .scroll-wrap{ position:relative; width:min(420px, 86vw); transition:transform .8s ease; }
-  .scroll-wrap.open{ transform:translateY(-24px); }
+  .scroll-wrap{
+    position:relative;
+    width:min(420px, 92vw);
+    --scroll-scale:min(1.714, calc(100vw / 420px), calc((100vh - 120px) / 646px));
+    transform:scale(var(--scroll-scale));
+    transition:transform .8s ease;
+  }
+
+  .scroll-wrap.open{ transform:scale(var(--scroll-scale)) translateY(-24px); }
 
   .rod{
     position:relative;
@@ -317,4 +327,73 @@
 
   @media (prefers-reduced-motion:reduce){
     .paper-clip, .paper-content, .seal-half, .rsvp, .hint{ transition:none !important; }
+  }
+
+  @media (max-width:480px){
+    .stage{
+      padding:4vh 16px 5vh;
+    }
+
+    .scroll-wrap{
+      width:calc(100% + 16px);
+      max-width:420px;
+      --scroll-scale:1;
+    }
+
+    .paper{
+      padding:2.25rem 1.25rem 2.5rem;
+    }
+
+    .paper-content{
+      min-width:0;
+    }
+
+    .invite-kicker{
+      font-size:.58rem;
+      letter-spacing:.14em;
+      line-height:1.35;
+    }
+
+    .scripture{
+      font-size:.72rem;
+    }
+
+    .divider{
+      width:82%;
+      margin:.8rem auto .95rem;
+    }
+
+    .verse{
+      font-size:.94rem;
+      line-height:1.45;
+      max-width:28ch;
+    }
+
+    .names{
+      font-size:clamp(1.75rem, 10vw, 2.25rem);
+      overflow-wrap:anywhere;
+    }
+
+    .invite-line,
+    .guest-name{
+      font-size:.94rem;
+    }
+
+    .details{
+      font-size:.96rem;
+      gap:.4rem;
+    }
+
+    .details .date{
+      font-size:1.15rem;
+    }
+
+    .seal-zone{
+      width:68px;
+      height:68px;
+    }
+
+    .scroll-wrap.open{
+      transform:scale(var(--scroll-scale)) translateY(-16px);
+    }
   }
