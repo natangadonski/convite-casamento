@@ -287,11 +287,15 @@
 
   .paper-content{ opacity:0; transform:translateY(10px); transition:opacity 1s ease .55s, transform 1s ease .55s; text-align:center; }
   .scroll-wrap.open .paper-content{ opacity:1; transform:translateY(0); }
-  .invite-kicker{ font-size:.68rem; color:#6b5238; margin:0 0 1rem; }
-  .names{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:clamp(2rem, 8vw, 2.7rem); line-height:1.15; margin:0; color:#7a2436; }
+  .invite-kicker{ font-size:.62rem; font-weight:600; color:#4a3423; margin:0 0 .12rem; }
+  .scripture{ font-family:'Cormorant Garamond', serif; font-size:.78rem; color:#9a8060; margin:0; }
+  .divider{ width:72%; height:1px; margin:1rem auto 1.15rem; background:linear-gradient(90deg, transparent, rgba(120,84,42,.55), transparent); }
+  .names{ position:relative; top:-.25rem; font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:500; font-size:clamp(2rem, 8vw, 2.7rem); line-height:1.15; margin:0; color:#7a2436; }
   .amp{ display:block; font-size:1.1rem; color:#b8935a; margin:.15rem 0; font-style:normal; }
   .flourish{ width:120px; height:14px; margin:1.3rem auto 1.5rem; opacity:.6; display:block; }
-  .verse{ font-size:1.02rem; line-height:1.6; color:#6b5238; max-width:30ch; margin:0 auto 1.6rem; }
+  .verse{ font-size:1.02rem; line-height:1.5; color:#6b5238; max-width:30ch; margin:0 auto .8rem; }
+  .invite-line{ margin:.35rem 0 0; color:#6b5238; font-size:1rem; }
+  .guest-name{ margin:.55rem 0; color:#4a3423; font-size:1.05rem; }
   .details{ display:grid; gap:.55rem; font-size:1.08rem; margin-bottom:1.8rem; }
   .details .date{ font-family:'Cormorant Garamond', serif; font-weight:600; font-size:1.35rem; }
   .details .place, .rsvp-note{ color:#6b5238; }
