@@ -192,7 +192,7 @@
 
   /* ---------- PROTOTIPO DO PERGAMINHO ---------- */
   html, body{
-    background: radial-gradient(ellipse at 50% 20%, #b9895a 0%, #9c6f42 75%);
+    background: radial-gradient(ellipse at 50% 20%, #a53a4d 0%, #4f1522 75%);
     font-family: 'EB Garamond', Georgia, serif;
     color: #4a3423;
     overflow-x:hidden;
@@ -239,6 +239,21 @@
     z-index:3;
   }
 
+  .rod::before,
+  .rod::after{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:10px;
+    background:#7a2436;
+    clip-path:polygon(0 0, 100% 50%, 0 100%);
+    pointer-events:none;
+    z-index:1;
+  }
+
+  .rod::before{ left:-1px; top:13px; }
+  .rod::after{ right:-1px; bottom:12px; transform:scaleX(-1); }
+
   .ribbon{
     position:absolute;
     top:0;
@@ -249,6 +264,7 @@
     background:transparent;
     box-shadow:none;
     z-index:5;
+    pointer-events:none;
   }
 
   .ribbon::before,
@@ -295,6 +311,21 @@
     box-shadow:inset 0 12px 20px -14px rgba(90,60,20,.5), inset 0 -12px 20px -14px rgba(90,60,20,.5);
   }
 
+  .paper::before,
+  .paper::after{
+    content:"";
+    position:absolute;
+    width:13px;
+    height:11px;
+    background:#7a2436;
+    clip-path:polygon(0 0, 100% 50%, 0 100%);
+    pointer-events:none;
+    z-index:1;
+  }
+
+  .paper::before{ left:-1px; top:28%; }
+  .paper::after{ right:-1px; top:64%; transform:scaleX(-1); }
+
   .paper-content{ opacity:0; transform:translateY(10px); transition:opacity 1s ease .55s, transform 1s ease .55s; text-align:center; }
   .scroll-wrap.open .paper-content{ opacity:1; transform:translateY(0); }
   .invite-kicker{ font-size:.62rem; font-weight:600; color:#4a3423; margin:0 0 .12rem; }
@@ -313,9 +344,11 @@
   .rsvp:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(90,20,30,.45); }
   .rsvp-note{ margin:.9rem 0 0; font-size:.85rem; font-style:italic; }
 
-  .seal-zone{ position:absolute; left:50%; top:52px; transform:translate(-50%, -50%); z-index:20; isolation:isolate; cursor:pointer; width:78px; height:78px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #a53a4d, #7a2436 55%, #4f1522 100%); box-shadow:0 4px 10px rgba(0,0,0,.5), inset 0 2px 4px rgba(255,255,255,.2); }
-  .scroll-wrap.open .seal-zone{ pointer-events:none; }
-  .seal-half{ position:absolute; inset:0; z-index:1; transition:transform .7s cubic-bezier(.4,0,.2,1), opacity .7s ease; }
+  .seal-zone{ position:absolute; left:50%; top:52px; transform:translate(-50%, -50%); z-index:100; isolation:isolate; cursor:pointer; width:78px; height:78px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #a53a4d, #7a2436 55%, #4f1522 100%); box-shadow:0 4px 10px rgba(0,0,0,.5), inset 0 2px 4px rgba(255,255,255,.2); transition:opacity .7s ease; }
+  .scroll-wrap.open .seal-zone{ pointer-events:none; opacity:0; }
+  .seal-half{ position:absolute; inset:0; z-index:2; transition:transform .7s cubic-bezier(.4,0,.2,1), opacity .7s ease; }
+  .seal-zone::before{ content:""; position:absolute; top:8%; left:50%; width:4px; height:84%; z-index:3; transform:translateX(-50%); background:#7a2436; pointer-events:none; }
+  .seal-zone::after{ content:"&"; position:absolute; top:50%; left:50%; z-index:4; transform:translate(-50%, -50%); color:#e6c9a8; font:italic 26px 'Cormorant Garamond', Georgia, serif; pointer-events:none; }
   .seal-half svg{ width:100%; height:100%; display:block; }
   .seal-half.left{ clip-path:inset(0 39px 0 0); }
   .seal-half.right{ clip-path:inset(0 0 0 39px); }
