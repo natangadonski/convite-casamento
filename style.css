@@ -221,31 +221,18 @@
 
   .rod{
     position:relative;
-    height:26px;
-    border-radius:14px;
+    height:52px;
+    border-radius:26px;
     background:linear-gradient(180deg, #e0c48a, #b8935a 45%, #8a6538);
     box-shadow:0 3px 8px rgba(0,0,0,.35), inset 0 1px 2px rgba(255,255,255,.4);
     z-index:3;
   }
 
-  .rod::before, .rod::after{
-    content:"";
-    position:absolute;
-    top:50%;
-    width:15px;
-    height:34px;
-    transform:translateY(-50%);
-    border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, #e0c48a, #7c5a30 70%);
-    box-shadow:inset -2px 0 4px rgba(0,0,0,.35);
-  }
-
-  .rod::before{ left:-7px; }
-  .rod::after{ right:-7px; }
-
   .paper-clip{
     overflow:hidden;
-    max-height:14px;
+    max-height:0;
+    width:calc(100% - 40px);
+    margin:0 auto;
     transition:max-height 1.35s cubic-bezier(.65,0,.35,1);
     background:linear-gradient(180deg, #c9a878, #e6d3a8);
   }
