@@ -290,7 +290,7 @@
     transition:transform .7s cubic-bezier(.4,0,.2,1), opacity .7s ease;
   }
 
-  .ribbon::before{ top:0; }
+  .ribbon::before{ top:4px; height:48px; }
   .ribbon::after{ bottom:0; }
 
   .scroll-wrap.open .ribbon::before{
