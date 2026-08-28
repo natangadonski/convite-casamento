@@ -237,7 +237,7 @@
 
   .rod{
     position:relative;
-    height:52px;
+    height:64px;
     border-radius:26px;
     /* Perfil de dois cones unidos pela parte estreita central. */
     clip-path:polygon(0 4%, 8% 8%, 24% 17%, 40% 24%, 50% 26%, 60% 24%, 76% 17%, 92% 8%, 100% 4%, 100% 96%, 92% 92%, 76% 83%, 60% 76%, 50% 74%, 40% 76%, 24% 83%, 8% 92%, 0 96%);
@@ -267,7 +267,7 @@
 
   .ribbon{
     position:absolute;
-    top:0;
+    top:10px;
     left:50%;
     width:28px;
     height:104px;
@@ -306,14 +306,14 @@
 
   .paper-clip{
     overflow:hidden;
-    max-height:0;
+    max-height:64px;
     width:calc(100% - 40px);
-    margin:0 auto;
-    transition:max-height 1.35s cubic-bezier(.65,0,.35,1);
-    background:transparent;
+    margin:-32px auto;
+    transition:max-height 1.35s cubic-bezier(.65,0,.35,1), margin 1.35s cubic-bezier(.65,0,.35,1);
+    background:linear-gradient(180deg, #f3e6c8, #e6d3a8);
   }
 
-  .scroll-wrap.open .paper-clip{ max-height:900px; }
+  .scroll-wrap.open .paper-clip{ max-height:900px; margin:-32px auto; background:transparent; }
 
   .paper{
     position:relative;
@@ -372,7 +372,7 @@
   .rsvp-note{ margin:.9rem 0 0; font-size:.85rem; font-style:italic; }
 
   :root{ --wax-color:#7a2436; --wax-dark:#4f1522; --gold-color:#d5a84f; --seal-size:78px; }
-  .seal-zone{ position:absolute; left:50%; top:52px; transform:translate(-50%, -50%); z-index:100; isolation:isolate; cursor:pointer; width:var(--seal-size); height:var(--seal-size); transition:opacity .7s ease; }
+  .seal-zone{ position:absolute; left:50%; top:62px; transform:translate(-50%, -50%); z-index:100; isolation:isolate; cursor:pointer; width:var(--seal-size); height:var(--seal-size); transition:opacity .7s ease; }
   .scroll-wrap.open .seal-zone{ pointer-events:none; opacity:0; }
   .wax-seal,.wax-body{ position:absolute; inset:0; border-radius:47% 53% 50% 46% / 52% 45% 55% 48%; }
   .wax-seal{ filter:drop-shadow(0 4px 5px rgba(0,0,0,.5)); }
