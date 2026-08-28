@@ -12,6 +12,8 @@ function openScroll() {
   if (wrap.classList.contains('open')) return;
   wrap.classList.add('open');
   seal.classList.add('cracked');
+  seal.classList.remove('closed');
+  seal.classList.add('opened');
 }
 
 seal.addEventListener('click', openScroll);
